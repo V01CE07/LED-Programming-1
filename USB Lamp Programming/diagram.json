@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -3, "left": 194.8, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0.6, "left": -87, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 71.45,
+      "left": 296.2,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-led", "id": "led1", "top": 25.2, "left": 272.6, "attrs": { "color": "red" } }
+  ],
+  "connections": [
+    [ "bb1:15t.c", "uno:9", "green", [ "v-105.6", "h-279.2" ] ],
+    [ "bb1:8t.d", "uno:GND.3", "blue", [ "v153.6", "h-196" ] ],
+    [ "r1:1", "bb1:15t.d", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:9t.d", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:9t.c", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:8t.c", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
