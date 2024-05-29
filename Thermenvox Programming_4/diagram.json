@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": -156.6, "left": 108.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 10.2, "left": -173.4, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -43.75,
+      "left": 171.4,
+      "rotate": 180,
+      "attrs": { "value": "10000" }
+    },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -222.1, "left": -57.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -112.8,
+      "left": 289.8,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "bb1:21b.h", "uno:3", "green", [ "v0" ] ],
+    [ "bb1:20b.h", "bb1:bn.16", "black", [ "v0" ] ],
+    [ "pot1:GND", "uno:GND.2", "black", [ "h-48", "v288.1" ] ],
+    [ "pot1:VCC", "uno:5V", "red", [ "v0" ] ],
+    [ "bb1:bn.25", "uno:GND.3", "green", [ "v190.7", "h-405.6" ] ],
+    [ "bb1:5b.g", "bb1:bn.4", "black", [ "v0" ] ],
+    [ "r1:1", "bb1:11b.f", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:5b.f", "", [ "$bb" ] ],
+    [ "bz1:1", "bb1:20b.g", "", [ "$bb" ] ],
+    [ "bz1:2", "bb1:21b.g", "", [ "$bb" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
